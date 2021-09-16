@@ -1,5 +1,6 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import "./keyboard/keyboard.css";
 
 function App() {
   return (
@@ -17,6 +18,12 @@ function App() {
         >
           Learn React
         </a>
+        <textarea
+          style={{
+            marginTop: "50px",
+          }}
+          className="use-keyboard-input"
+        ></textarea>
       </header>
     </div>
   );
