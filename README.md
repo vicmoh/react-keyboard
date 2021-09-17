@@ -1,70 +1,128 @@
-# Getting Started with Create React App
+# Installation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Git submodule method
 
-## Available Scripts
+When you are using git module method, whenever you
+clone your project, you must add `--recurse-submodules` flag to also
+clone the git submodule packages.
 
-In the project directory, you can run:
+For example:
 
-### `yarn start`
+```
+git clone "<your_project>" `--recurse-submodules`
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Adding package
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+In your project add this git module.
+Add the `<package-path>` where
+you want the package to be in.
 
-### `yarn test`
+```
+git submodule add "https://github.com/vicmoh/react-keyboard" <package-path>
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Initialize keyboard
 
-### `yarn build`
+In main root render app file for your
+react project, initialize the `Keyboard`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Import your keyboard where `ReactDOM.render` is declared.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```js
+import { Keyboard } from "./<package_path>/src/keyboard/keyboard";
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Initialize your keyboard below under where `ReactDOM.render`
+is declared.
 
-### `yarn eject`
+```js
+Keyboard.init();
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+For example:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+// IMPORT YOUR KEYBOARD
+import { Keyboard } from "./<package_path>/src/keyboard/keyboard";
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById("root")
+);
 
-## Learn More
+// INITIALIZE YOUR KEYBOARD BELOW
+// UNDER THE RENDER HERE.
+Keyboard.init();
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+reportWebVitals();
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Keyboard usage
 
-### Code Splitting
+To apply the keyboard input, import the css
+file
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```js
+import "./<package_path>/src/keyboard/keyboard.css";
+```
 
-### Analyzing the Bundle Size
+and add
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```js
+className = "use-keyboard-input";
+```
 
-### Making a Progressive Web App
+on your
+input field component.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+For Example code:
 
-### Advanced Configuration
+```js
+import logo from "./logo.svg";
+import "./App.css";
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+// IMPORT YOUR CSS
+import "./keyboard/keyboard.css";
 
-### Deployment
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+        <textarea
+          style={{
+            marginTop: "50px",
+          }}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+          {/***** APPLY THE KEYBOARD ON A COMPONENT *****/}
+          className="use-keyboard-input"
 
-### `yarn build` fails to minify
+        ></textarea>
+      </header>
+    </div>
+  );
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+export default App;
+
+```
