@@ -15,6 +15,16 @@ export const Keyboard = {
     capsLock: false,
   },
 
+  hide() {
+    var elements = document.getElementsByClassName("keyboard");
+    elements.classList.add("keyboard--hidden");
+  },
+
+  show() {
+    var elements = document.getElementsByClassName("keyboard");
+    elements.classList.remove("keyboard--hidden");
+  },
+
   init() {
     // Create main elements
     this.elements.main = document.createElement("div");
