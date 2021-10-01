@@ -17,12 +17,12 @@ export const Keyboard = {
 
   hide() {
     var elements = document.getElementsByClassName("keyboard");
-    elements.classList.add("keyboard--hidden");
+    elements[0].classList.add("keyboard--hidden");
   },
 
   show() {
     var elements = document.getElementsByClassName("keyboard");
-    elements.classList.remove("keyboard--hidden");
+    elements[0].classList.remove("keyboard--hidden");
   },
 
   init() {
