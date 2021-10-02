@@ -84,14 +84,16 @@ file
 import "./<package_path>/src/keyboard/keyboard.css";
 ```
 
-and add `Keyboard.show("someTextFieldId")` onFocus.
+and add `Keyboard.show("someFieldId")`
 
 ```js
-Keyboard.show("someTextFieldId");
+Keyboard.show("someFieldId");
 ```
 
-on your
-input field component.
+on your input field component.
+
+When `Keyboard.show('someId')` is called, it will
+show the keyboard.
 
 For Example code:
 
