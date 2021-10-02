@@ -1,6 +1,6 @@
 # About
 
-React keyboard that will shows up when you click
+React keyboard that will show up when you click
 on any input area.
 
 Good use for touch-screen based react app.
