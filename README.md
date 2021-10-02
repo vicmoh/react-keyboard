@@ -101,7 +101,7 @@ For Example code:
 import logo from "./logo.svg";
 import "./App.css";
 
-// IMPORT YOUR CSS
+// ***** IMPORT YOUR CSS *****
 import "./keyboard/keyboard.css";
 
 function App() {
