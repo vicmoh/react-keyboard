@@ -130,7 +130,7 @@ function App() {
           autoFocus={false}
           id="field"
 
-          {/***** APPLY THE KEYBOARD ON A COMPONENT *****/}
+          {/***** SHOW THE KEYBOARD ON FOCUS *****/}
           onFocus={() => Keyboard.show("field")}
 
         />
