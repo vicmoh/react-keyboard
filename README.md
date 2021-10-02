@@ -75,10 +75,10 @@ file
 import "./<package_path>/src/keyboard/keyboard.css";
 ```
 
-and add
+and add `Keyboard.show("someTextFieldId")` onFocus.
 
 ```js
-className = "use-keyboard-input";
+Keyboard.show("someTextFieldId");
 ```
 
 on your
@@ -118,6 +118,21 @@ function App() {
           className="use-keyboard-input"
 
         ></textarea>
+        <TextField
+          style={{
+            marginTop: "50px",
+            backgroundColor: "white",
+          }}
+
+          {/***** MAKE SURE ID IS SET AND AUTOFOCUS IS FALSE *****/}
+          autoFocus={false}
+          id="field"
+
+          {/***** APPLY THE KEYBOARD ON A COMPONENT *****/}
+          onFocus={() => Keyboard.show("field")}
+
+
+        />
       </header>
     </div>
   );
