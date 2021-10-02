@@ -1,6 +1,17 @@
 import logo from "./logo.svg";
 import "./App.css";
 import "./keyboard/keyboard.css";
+import TextField from "@mui/material/TextField";
+import { Keyboard } from "./keyboard/keyboard";
+
+const TextArea = () => (
+  <textarea
+    style={{
+      marginTop: "50px",
+    }}
+    className="use-keyboard-input"
+  ></textarea>
+);
 
 function App() {
   return (
@@ -18,12 +29,15 @@ function App() {
         >
           Learn React
         </a>
-        <textarea
+        <TextField
           style={{
             marginTop: "50px",
+            backgroundColor: "white",
           }}
-          className="use-keyboard-input"
-        ></textarea>
+          id="field"
+          autoFocus={false}
+          onFocus={() => Keyboard.show("field")}
+        />
       </header>
     </div>
   );
