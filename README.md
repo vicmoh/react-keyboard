@@ -1,3 +1,12 @@
+# About
+
+React keyboard that will shows up when you click
+on any input area.
+
+Good use for touch-screen based react app.
+
+![Image](./readme-assets/keyboard.png?raw=true "Keyboard")
+
 # Installation
 
 ## Git submodule method
