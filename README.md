@@ -109,15 +109,6 @@ function App() {
         >
           Learn React
         </a>
-        <textarea
-          style={{
-            marginTop: "50px",
-          }}
-
-          {/***** APPLY THE KEYBOARD ON A COMPONENT *****/}
-          className="use-keyboard-input"
-
-        ></textarea>
         <TextField
           style={{
             marginTop: "50px",
@@ -130,7 +121,6 @@ function App() {
 
           {/***** APPLY THE KEYBOARD ON A COMPONENT *****/}
           onFocus={() => Keyboard.show("field")}
-
 
         />
       </header>
