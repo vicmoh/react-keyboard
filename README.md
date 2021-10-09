@@ -18,7 +18,7 @@ clone the git submodule packages.
 For example:
 
 ```
-git clone "<your_project>" `--recurse-submodules`
+git clone "<your_project>" --recurse-submodules
 ```
 
 ### Adding package
