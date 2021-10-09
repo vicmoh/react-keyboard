@@ -39,8 +39,10 @@ export class Keyboard {
                 left: 0; 
                 right: 0; 
                 font-size: 30px; 
+                resize: none;
                 margin-bottom: 20px;
-                margin-top: 20px;'
+                margin-top: 20px;
+                z-index: 9999;'
           id='keyboard-field'
           class='use-keyboard-input'
         ></textarea>
@@ -200,8 +202,12 @@ export class Keyboard {
             console.log("keyField: ", keyField.value);
             console.log("id: ", this.keyId);
 
+            // Assign to the textfield
             if (this.keyId !== undefined && this.keyId !== null)
               document.getElementById(this.keyId).value = keyField.value;
+
+            // Clear keyboard field
+            keyField.value = "";
 
             this.close();
             this._triggerEvent("onclose");
