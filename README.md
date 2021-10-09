@@ -98,7 +98,7 @@ show the keyboard.
 For password option:
 
 ```js
-Keyboard.show("someId", { isPasswordType: true })
+Keyboard.show("someId", { isPasswordType: true });
 ```
 
 Example code:
@@ -137,7 +137,7 @@ function App() {
           id="field"
 
           {/***** SHOW THE KEYBOARD ON FOCUS *****/}
-          onFocus={() => Keyboard.show("field")}
+          onFocus={() => Keyboard.show("field", { isPasswordType: true })}
 
         />
       </header>
