@@ -4,14 +4,14 @@ import "./keyboard/keyboard.css";
 import TextField from "@mui/material/TextField";
 import { Keyboard } from "./keyboard/keyboard";
 
-const TextArea = () => (
-  <textarea
-    style={{
-      marginTop: "50px",
-    }}
-    className="use-keyboard-input"
-  ></textarea>
-);
+//const TextArea = () => (
+//  <textarea
+//    style={{
+//      marginTop: "50px",
+//    }}
+//    className="use-keyboard-input"
+//  ></textarea>
+//);
 
 function App() {
   return (
