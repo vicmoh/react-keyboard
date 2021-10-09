@@ -36,7 +36,7 @@ function App() {
           }}
           id="field"
           autoFocus={false}
-          onFocus={() => Keyboard.show("field")}
+          onFocus={() => Keyboard.show("field", { isPasswordType: true })}
         />
       </header>
     </div>

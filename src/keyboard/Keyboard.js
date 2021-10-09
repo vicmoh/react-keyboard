@@ -1,5 +1,6 @@
 export class Keyboard {
   static keyId = null;
+  static isPasswordType = false;
 
   static elements = {
     main: null,
@@ -18,12 +19,18 @@ export class Keyboard {
     capsLock: false,
   };
 
-  static show(id) {
+  static show(id, options) {
+    this.isForPassword = options?.isPasswordType ?? false;
     this.keyId = id;
     var elements = document.getElementsByClassName("keyboard");
+
     elements[0].classList.remove("keyboard--hidden");
     console.log("focus: ", id);
+
     document.getElementById("keyboard-field").focus();
+    document
+      .getElementById("keyboard-field")
+      .setAttribute("type", this.isForPassword ? "password" : "");
   }
 
   static init() {
@@ -33,7 +40,7 @@ export class Keyboard {
 
     this.elements.textContainer.innerHTML = `
       <div style='margin:auto; width:50%; left: 0; right: 0;'>
-        <textarea
+        <input
           style='height: 40px;
                 width:100%; 
                 left: 0; 
@@ -45,11 +52,10 @@ export class Keyboard {
                 z-index: 9999;'
           id='keyboard-field'
           class='use-keyboard-input'
-        ></textarea>
+        ></input>
       </div>`;
 
     //document.getElementById("input-field")[0].createElement("textarea");
-
     this.elements.keysContainer = document.createElement("div");
     this.elements.main.classList.add("keyboard", "keyboard--hidden");
     this.elements.keysContainer.classList.add("keyboard__keys");

@@ -95,7 +95,13 @@ on your input field component.
 When `Keyboard.show('someId')` is called, it will
 show the keyboard.
 
-For Example code:
+For password option:
+
+```
+Keyboard.show("someId", { isPasswordType: true })
+```
+
+Example code:
 
 ```js
 import logo from "./logo.svg";
