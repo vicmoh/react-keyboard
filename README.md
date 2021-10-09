@@ -97,7 +97,7 @@ show the keyboard.
 
 For password option:
 
-```
+```js
 Keyboard.show("someId", { isPasswordType: true })
 ```
 
